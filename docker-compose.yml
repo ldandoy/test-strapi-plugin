@@ -1,0 +1,15 @@
+version: '3.8'
+services:    
+  api:        
+    build: 
+      context: .
+      dockerfile: ./node/Dockerfile
+    volumes:
+      - ./app:/app
+    ports:            
+      - "1337:1337"   
+    networks:
+      - strapi-test
+
+networks:
+  strapi-test:
